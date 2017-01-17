@@ -5,6 +5,7 @@ module Sendbird
     attribute :user_id, String
     attribute :nickname, String
     attribute :access_token, String
+    attribute :issue_access_token, Boolean
 
     def create
       json = client.post("#{path}/create", params)
@@ -25,7 +26,8 @@ module Sendbird
       def params
         {
           id: id,
-          nickname: nickname
+          nickname: nickname,
+          issue_access_token: issue_access_token
         }
       end
 
