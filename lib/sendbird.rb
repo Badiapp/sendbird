@@ -3,6 +3,13 @@ module Sendbird
   require 'virtus'
   require 'faraday'
 
-  require_all 'sendbird'
+  require "sendbird/error"
+  require "sendbird/version"
+  require 'sendbird/client'
+  require 'sendbird/configuration'
+  require 'sendbird/base'
+  require 'sendbird/group_channel'
+  require 'sendbird/user'
+  require 'sendbird/messaging'
 
 end
