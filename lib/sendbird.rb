@@ -10,5 +10,6 @@ module Sendbird
   require 'sendbird/base'
   require 'sendbird/user'
   require 'sendbird/messaging'
+  require 'sendbird/group_channel'
 
 end

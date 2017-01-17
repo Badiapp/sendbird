@@ -30,6 +30,5 @@ module Sendbird
           issue_access_token: issue_access_token
         }
       end
-
   end
 end
