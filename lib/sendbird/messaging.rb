@@ -5,7 +5,7 @@ module Sendbird
     attribute :channel_url, String
     attribute :last_message, String
     attribute :last_message_ts, Integer
-    attribute :members, Array[Sendbird::User]
+    attribute :members, Array
     attribute :created_at, String
 
     def create

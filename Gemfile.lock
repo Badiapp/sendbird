@@ -27,6 +27,7 @@ GEM
     ice_nine (0.11.1)
     multipart-post (2.0.0)
     rake (10.5.0)
+    require_all (1.4.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
       rspec-expectations (~> 3.4.0)
@@ -59,10 +60,11 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 1.10)
   rake (~> 10.5)
+  require_all
   rspec (~> 3.4)
   sendbird!
   vcr (~> 3.0)
   webmock (~> 1.22)
 
 BUNDLED WITH
-   1.10.6
+   1.13.6
