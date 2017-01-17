@@ -1,5 +1,5 @@
 module Sendbird
-  require 'require_all'
+  # require 'require_all'
   require 'virtus'
   require 'faraday'
 

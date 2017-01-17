@@ -3,7 +3,7 @@ module Sendbird
     attribute :name, String
     attribute :cover_url, String
     attribute :data, String
-    attribute :user_ids, Array
+    attribute :user_ids, String
     attribute :is_distinct, Boolean
     attribute :custom_type, String
 
