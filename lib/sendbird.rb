@@ -5,11 +5,14 @@ module Sendbird
 
   require "sendbird/error"
   require "sendbird/version"
+  # require 'sendbird/group_channel'
+
+
   require 'sendbird/client'
+
   require 'sendbird/configuration'
   require 'sendbird/base'
   require 'sendbird/user'
   require 'sendbird/messaging'
-  require 'sendbird/group_channel'
 
 end

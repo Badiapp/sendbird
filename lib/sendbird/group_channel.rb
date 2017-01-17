@@ -56,11 +56,11 @@ module Sendbird
 
       def params
         {
-          name: name
-          cover_url: cover_url
-          data: data
-          user_ids: user_ids
-          is_distinct: is_distinct
+          name: name,
+          cover_url: cover_url,
+          data: data,
+          user_ids: user_ids,
+          is_distinct: is_distinct,
           custom_type: custom_type
         }
       end
