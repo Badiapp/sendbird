@@ -14,7 +14,7 @@ module Sendbird
         name: name
       }
 
-      json = client.post("#{path}/create", params)
+      json = client.post("#{path}", params)
 
       json["channel_url"] = json["channel"]["channel_url"]
 
@@ -29,7 +29,7 @@ module Sendbird
         user_ids: users.map(&:id)
       }
 
-      json = client.post("#{path}/invite", params)
+      json = client.post("#{path}", params)
 
       self
     end
@@ -40,7 +40,7 @@ module Sendbird
         channel_url: channel_url
       }
 
-      json = client.post("#{path}/view", params)
+      json = client.post("#{path}", params)
 
       json["members"].each do |member|
         member["user_id"] = member["id"]
@@ -53,7 +53,7 @@ module Sendbird
     private
 
       def path
-        "messaging"
+        "v3/messages"
       end
 
       def reference_id

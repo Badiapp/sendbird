@@ -2,11 +2,10 @@ module Sendbird
   class Client
 
     def post(url, params = {})
-      params[:auth] = api_key
-
       response = faraday_client.post do |req|
         req.url api_url(url)
         req.headers['Content-Type'] = 'application/json'
+        req.headers['Api-Token'] = api_key
 
         req.body = JSON.generate(params)
       end
@@ -17,6 +16,23 @@ module Sendbird
 
       json
     end
+
+    def put(url, params = {})
+      response = faraday_client.put do |req|
+        req.url api_url(url)
+        req.headers['Content-Type'] = 'application/json'
+        req.headers['Api-Token'] = api_key
+
+        req.body = JSON.generate(params)
+      end
+
+      json = JSON.parse response.body
+
+      raise Error, "Error: #{json["message"]}" if json["error"]
+
+      json
+    end
+
 
     private
 

@@ -8,11 +8,7 @@ module Sendbird
     attribute :custom_type, String
 
     def create
-      json = client.post("#{path}/create", params)
-
-      json["channel_url"] = json["channel"]["channel_url"]
-
-      self.class.new(json)
+      client.post("#{path}", params)
     end
 
     # def invite(users)
@@ -34,7 +30,7 @@ module Sendbird
         channel_url: channel_url
       }
 
-      json = client.post("#{path}/view", params)
+      json = client.post("#{path}", params)
 
       json["members"].each do |member|
         member["user_id"] = member["id"]
@@ -47,7 +43,7 @@ module Sendbird
     private
 
       def path
-        "group_channels"
+        "v3/group_channels"
       end
 
       def reference_id

@@ -1,22 +1,24 @@
 module Sendbird
   class User < Base
 
-    attribute :id, String
     attribute :user_id, String
     attribute :nickname, String
+    attribute :profile_url, String
     attribute :access_token, String
     attribute :issue_access_token, Boolean
 
     def create
-      json = client.post("#{path}/create", params)
+      client.post("#{path}/", params)
+    end
 
-      self.class.new(json)
+    def update
+      client.put("#{path}/#{user_id}", params)
     end
 
     private
 
       def path
-        "user"
+        "v3/users"
       end
 
       def reference_id
@@ -25,8 +27,9 @@ module Sendbird
 
       def params
         {
-          id: id,
+          user_id: user_id,
           nickname: nickname,
+          profile_url: profile_url,
           issue_access_token: issue_access_token
         }
       end
