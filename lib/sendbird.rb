@@ -11,5 +11,6 @@ module Sendbird
   require 'sendbird/group_channel'
   require 'sendbird/user'
   require 'sendbird/messaging'
+  require 'sendbird/migration'
 
 end
